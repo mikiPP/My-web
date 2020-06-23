@@ -5,6 +5,8 @@ import smoke from './assets/smoke.mp4'
 function App() {
 
     const breakScroll = (event) =>  {
+
+        
        
         const side1 = document.getElementById('side1');
         side1.style.left= - +window.pageYOffset +'px'
@@ -14,15 +16,11 @@ function App() {
         side2.style.left = +window.pageYOffset + 'px'
 
         const content = document.getElementById('content');
+        const relation = 1.28; // this is the relation between the left property and the heigth of the screen
         const leftPx = side2.style.left.split('px')[0];
-       
-        content.style.opacity = ((leftPx  / +window.outerWidth ) * 1.28)  ;
-        console.log(content.style.opacity)
-        
+        content.style.opacity = ((leftPx  / +window.outerWidth ) * relation)  ;
 
-       
-
-        if ( window.outerWidth / leftPx <= 1.28 ){
+        if ( window.outerWidth / leftPx <= relation ){
             window.removeEventListener("scroll", breakScroll);
         }
     }
