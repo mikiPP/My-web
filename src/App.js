@@ -7,15 +7,22 @@ function App() {
     const breakScroll = (event) =>  {
        
         const side1 = document.getElementById('side1');
-        side1.style.left= - + window.pageYOffset +'px'
+        side1.style.left= - +window.pageYOffset +'px'
  
         
         const side2 = document.getElementById('side2');
-        side2.style.left = + window.pageYOffset + 'px'
+        side2.style.left = +window.pageYOffset + 'px'
 
+        const content = document.getElementById('content');
         const leftPx = side2.style.left.split('px')[0];
+       
+        content.style.opacity = ((leftPx  / +window.outerWidth ) * 1.28)  ;
+        console.log(content.style.opacity)
+        
 
-        if(window.outerWidth / leftPx <= 1.28){
+       
+
+        if ( window.outerWidth / leftPx <= 1.28 ){
             window.removeEventListener("scroll", breakScroll);
         }
     }
@@ -39,6 +46,10 @@ function App() {
         <section className="broken display-none" id="broken">
                 <div className="side" id="side1"></div>
                 <div className="side" id="side2"></div>
+        </section>
+
+        <section id="content">
+            <div></div>
         </section>
     </div>
   );
