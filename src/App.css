@@ -27,7 +27,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
   animation: oppening 4s ease-out forwards;
-  animation-delay: 0.7s;
+  animation-delay: 0.75s;
 }
 
 .first .video {
@@ -180,7 +180,7 @@ section .side#side2 {
   position: relative;
   bottom: 80px;
   left: 15px;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #0078db;
 }
 
@@ -204,11 +204,11 @@ section .side#side2 {
 #portfolio h1 {
   margin-top: 5%;
   color: #0078bd;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 #portfolio .cardContainer {
-  width: 1000px;
+  width: 80%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -307,6 +307,8 @@ section .side#side2 {
 
 #skillsContainer {
   background: #dbe9ee;
+  color: #dbe9ee;
+  height: 100vh;
 }
 
 #skills {
@@ -315,12 +317,116 @@ section .side#side2 {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 81%);
 }
 
+.textCenterContainer {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+#languagesContainer {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 1em;
+}
+
+#languagesContainer div {
+  text-align: center;
+}
+
+.languagesImgContainer {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 1em;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  margin: auto;
+  transition: 0.5s;
+  /* box-shadow: 13px 8px 8px 0px rgba(0, 0, 0, 0.8); */
+}
+
+.tooltip .tooltipText {
+  opacity: 0;
+  width: 100px;
+  background-color: #dbe9ee;
+  color: #4f6d7a;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-weight: bolder;
+
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.tooltip:hover .tooltipText {
+  opacity: 100%;
+}
+
+#languagesContainer div div img {
+  width: 100%;
+}
+
+.tooltip:hover {
+  width: 55%;
+  /* box-shadow: 13px 8px 8px 0px rgba(0, 0, 0, 0.3); */
+}
+
+#languagesContainer div h3 {
+  font-size: 1.5em;
+}
+
+@media (min-width: 1200px) {
+  .tooltip {
+    width: 30%;
+  }
+
+  .tooltip .tooltipText {
+    width: 65px;
+  }
+}
+
+/** ---- recomendation Section ---- **/
+
+#recomendationContainer {
+  height: 100vh;
+  background-color: #4f6d7a;
+}
+
+#recomendation {
+  height: 100vh;
+  background-color: #dbe9ee;
+  clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 80%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.custom-swiper-slide {
+  /* background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px; */
+  background-color: rebeccapurple;
+}
+
 /** ---- Footer Section ---- **/
 
 .footer {
-  height: 250px;
-  background: #dbe9ee;
-  color: #4f6d7a;
+  height: 300px;
+  color: #dbe9ee;
+  background: #4f6d7a;
 }
 
 .footer ul {
@@ -396,6 +502,11 @@ section .side#side2 {
   padding-top: 5%;
 }
 
+.row:nth-child(2) .col {
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
 /** ---- CV Button Section ---- **/
 #cv {
   width: 80px;
@@ -440,11 +551,11 @@ section .side#side2 {
 
 /** ---- ScrollBar Section ---- **/
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 12px;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background: linear-gradient(#fff, #0078bd);
   border-radius: 6px;
 }

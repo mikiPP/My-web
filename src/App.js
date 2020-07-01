@@ -7,6 +7,8 @@ import starWars from './assets/starWars.png';
 import sprintOrganizer from './assets/sprintOrganizer.svg';
 import { Row, Col } from 'react-bootstrap';
 import cv from './assets/cv.pdf';
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css';
 
 function App() {
   const breakScroll = (event) => {
@@ -26,12 +28,22 @@ function App() {
       window.removeEventListener('scroll', breakScroll);
       document.getElementById('message').classList.add('display-none');
       document.getElementById('broken').classList.add('display-none');
-      window.scrollTo(0, 0); //this redirect to the top of the page
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }); //this redirect to the top of the page
     }
+  };
+
+  const params = {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   };
 
   return (
     <div className="App">
+      {/*  First Section  */}
       <section
         className="first"
         onAnimationEnd={(event) => {
@@ -49,6 +61,8 @@ function App() {
         <h2> Welcome to my web page</h2>
       </section>
 
+      {/* Broken Section */}
+
       <section className="broken display-none" id="broken">
         <div className="side" id="side1"></div>
         <div className="side" id="side2"></div>
@@ -56,6 +70,8 @@ function App() {
           <h2>Scroll down to see the page!</h2>
         </div>
       </section>
+
+      {/* Header Section */}
 
       <section id="content" className="display-none">
         <div className="headerContainer">
@@ -73,6 +89,9 @@ function App() {
           </div>
           <span id="keepScrolling">Keep scrolling to know more about me !</span>
         </div>
+
+        {/* Porfolio Section */}
+
         <div id="portfolioContainer">
           <div id="portfolio">
             <h1> My projects or projects where i have collaborated: </h1>
@@ -141,8 +160,118 @@ function App() {
           </div>
         </div>
 
+        {/* Skills Section */}
+
         <div id="skillsContainer">
-          <div id="skills"></div>
+          <div id="skills">
+            <div className="textCenterContainer">
+              <h1>Languages</h1>
+            </div>
+
+            <div id="languagesContainer">
+              <div id="languagesLearned">
+                <h3>Languages that i learned</h3>
+                <div className="languagesImgContainer">
+                  <div className="tooltip">
+                    <img
+                      alt="python"
+                      src="https://img.icons8.com/color/480/000000/python.png"
+                    />
+                    <span className="tooltipText"> Python </span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="react"
+                      src="https://img.icons8.com/color/480/000000/react-native.png"
+                    />
+                    <span className="tooltipText"> React </span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="node"
+                      src="https://img.icons8.com/color/480/000000/nodejs.png"
+                    />
+                    <span className="tooltipText"> Node </span>
+                  </div>
+                  <div className="tooltip">
+                    <img
+                      alt="mongoDB"
+                      src="https://img.icons8.com/color/480/000000/mongodb.png"
+                    />
+                    <span className="tooltipText"> Mongo </span>
+                  </div>
+                </div>
+              </div>
+              <div id="languagesWorked">
+                <h3>Languages that i used in work</h3>
+                <div className="languagesImgContainer">
+                  <div className="tooltip">
+                    <img
+                      alt="angular"
+                      src="https://img.icons8.com/color/480/000000/angularjs.png"
+                    />
+                    <span className="tooltipText"> Angular </span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="vue"
+                      src="https://img.icons8.com/color/480/000000/vue-js.png"
+                    />
+                    <span className="tooltipText"> Vue </span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="jquery"
+                      src="https://img.icons8.com/ios-filled/500/000000/jquery.png"
+                    />
+                    <span className="tooltipText"> Jquery </span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="springBoot"
+                      src="https://img.icons8.com/color/480/000000/spring-logo.png"
+                    />
+                    <span className="tooltipText"> Spring </span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="mySQL"
+                      src="https://img.icons8.com/ios-filled/500/000000/mysql-logo.png"
+                    />
+                    <span className="tooltipText"> MySql</span>
+                  </div>
+
+                  <div className="tooltip">
+                    <img
+                      alt="java"
+                      src="https://img.icons8.com/color/480/000000/java-coffee-cup-logo.png"
+                    />
+                    <span className="tooltipText"> Java </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Recomendations Container */}
+
+        <div id="recomendationContainer">
+          <div id="recomendation">
+            <Swiper {...params}>
+              <div>Slide #1</div>
+              <div>Slide #2</div>
+              <div>Slide #3</div>
+              <div>Slide #4</div>
+              <div>Slide #5</div>
+            </Swiper>
+          </div>
         </div>
 
         <div className="footer">
