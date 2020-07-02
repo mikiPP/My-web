@@ -209,14 +209,18 @@ section .side#side2 {
 
 #portfolio .cardContainer {
   width: 80%;
+  height: 80%;
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
   margin-top: 5%;
 }
 
 #portfolio .cardContainer .card {
   position: relative;
+  margin: 0 auto;
 }
 
 #portfolio .cardContainer .card .face {
@@ -336,7 +340,7 @@ section .side#side2 {
 .languagesImgContainer {
   margin-top: 5%;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1em;
 }
 
@@ -346,12 +350,11 @@ section .side#side2 {
   width: 40%;
   margin: auto;
   transition: 0.5s;
-  /* box-shadow: 13px 8px 8px 0px rgba(0, 0, 0, 0.8); */
 }
 
 .tooltip .tooltipText {
   opacity: 0;
-  width: 100px;
+  width: 0;
   background-color: #dbe9ee;
   color: #4f6d7a;
   text-align: center;
@@ -366,6 +369,7 @@ section .side#side2 {
 
 .tooltip:hover .tooltipText {
   opacity: 100%;
+  width: 100px;
 }
 
 #languagesContainer div div img {
@@ -374,51 +378,126 @@ section .side#side2 {
 
 .tooltip:hover {
   width: 55%;
-  /* box-shadow: 13px 8px 8px 0px rgba(0, 0, 0, 0.3); */
 }
 
 #languagesContainer div h3 {
   font-size: 1.5em;
 }
 
-@media (min-width: 1200px) {
-  .tooltip {
-    width: 30%;
-  }
-
-  .tooltip .tooltipText {
-    width: 65px;
-  }
-}
-
 /** ---- recomendation Section ---- **/
 
 #recomendationContainer {
-  height: 100vh;
   background-color: #4f6d7a;
+  height: 100vh;
 }
 
 #recomendation {
   height: 100vh;
   background-color: #dbe9ee;
   clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 80%);
-  display: flex;
-  justify-content: center;
+}
+
+#boxContainer {
+  height: 750px !important;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+  box-sizing: border-box;
+  padding: 20px;
   align-items: center;
 }
 
-.custom-swiper-container {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+#boxContainer .box {
+  position: relative;
+  padding: 40px;
+  height: 300px;
+  transition: 0.5s;
+  text-align: center;
+  background: #4f6d7a;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.custom-swiper-slide {
-  /* background-position: center;
+#boxContainer .box:hover {
+  background: #dbe9ee;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+#boxContainer .box p {
+  margin: 10px 0 0;
+  padding: 0;
+  transition: 0.5s;
+  color: #dbe9ee;
+}
+
+#boxContainer .box h4 {
+  margin: 20px 0 0;
+  padding: 0;
+  transition: 0.5s;
+  font-size: 2em;
+  font-weight: bolder;
+  line-height: 20px;
+  color: #dbe9ee;
+  text-transform: uppercase;
+  display: flex;
+  flex-flow: column;
+}
+
+#boxContainer .box:hover h4,
+#boxContainer .box:hover p,
+#boxContainer .box:hover h4 span {
+  color: #4f6d7a;
+}
+
+#boxContainer .box h4 span {
+  font-weight: 500;
+  font-size: 1em;
+  color: #c5c5c5;
+  transition: 0.5s;
+  margin-top: 5%;
+}
+
+#boxContainer .box:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  width: 80px;
+  height: 80px;
+  background: url('./assets/quotes.png');
   background-size: cover;
-  width: 300px;
-  height: 300px; */
-  background-color: rebeccapurple;
+  opacity: 0.05;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: rotate(180deg);
+}
+
+#boxContainer .box:hover:before {
+  opacity: 1;
+  transform: rotate(180deg) translateY(35px);
+}
+
+#boxContainer .box:after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  width: 80px;
+  height: 80px;
+  background: url('./assets/quotes.png');
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+#boxContainer .box:hover:after {
+  opacity: 1;
+  transform: translateY(-40px);
 }
 
 /** ---- Footer Section ---- **/
@@ -558,6 +637,204 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: linear-gradient(#fff, #0078bd);
   border-radius: 6px;
+}
+
+@media (max-width: 1300px) {
+  .tooltip {
+    width: 45%;
+  }
+
+  .tooltip:hover {
+    width: 60%;
+  }
+
+  .tooltip:hover .tooltipText {
+    width: 60px;
+  }
+
+  #recomendationContainer {
+    height: 130vh;
+  }
+
+  #recomendation {
+    height: 130vh;
+  }
+
+  #boxContainer {
+    height: 900px !important;
+  }
+
+  #recomendation .textCenterContainer {
+    margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 800px) {
+  #keepScrolling {
+    position: relative;
+    bottom: 40px;
+  }
+
+  #portfolioContainer {
+    height: 200vh;
+  }
+
+  #portfolio {
+    height: 200vh;
+  }
+
+  .tooltip {
+    width: 30%;
+  }
+
+  .tooltip:hover {
+    width: 45%;
+  }
+
+  #recomendationContainer {
+    height: 180vh;
+  }
+
+  #recomendation {
+    height: 180vh;
+  }
+
+  #boxContainer {
+    height: 1250px !important;
+  }
+
+  #recomendation .textCenterContainer {
+    margin-bottom: 5%;
+  }
+
+  .box {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  * {
+    font-size: 12px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 14px;
+  }
+
+  .first h2:before {
+    animation-delay: 1.4s;
+  }
+
+  .broken .side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/logo.svg');
+    background-repeat: no-repeat;
+    background-color: #4f6d7a;
+  }
+
+  #message {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  #message h2 {
+    color: #dbe9ee;
+    font-size: 14px;
+    font-weight: 900;
+    opacity: 100%;
+    animation: none;
+  }
+
+  .headerContainer {
+    height: 180vh;
+  }
+
+  .header {
+    height: 180vh;
+  }
+
+  #keepScrolling {
+    position: relative;
+    bottom: 30px;
+    left: 0;
+  }
+
+  #portfolioContainer {
+    height: 340vh;
+  }
+
+  #portfolio {
+    height: 340vh;
+  }
+
+  #skillsContainer {
+    height: 220vh;
+  }
+
+  #skills {
+    height: 220vh;
+  }
+
+  #languagesContainer {
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  }
+
+  .tooltip {
+    width: 25%;
+  }
+
+  .tooltip:hover {
+    width: 45%;
+  }
+
+  #recomendationContainer {
+    height: 300vh;
+  }
+
+  #recomendation {
+    height: 300vh;
+  }
+
+  #boxContainer {
+    height: 1550px !important;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  }
+
+  #boxContainer .box:after {
+    left: 5px;
+    bottom: 5px;
+  }
+
+  #recomendation .textCenterContainer {
+    margin-bottom: 5%;
+  }
+
+  .box {
+    margin-top: 5%;
+  }
+
+  .footer ul li a {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 /** ---- KeyFrames Section ---- **/

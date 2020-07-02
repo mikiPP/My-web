@@ -7,7 +7,6 @@ import starWars from './assets/starWars.png';
 import sprintOrganizer from './assets/sprintOrganizer.svg';
 import { Row, Col } from 'react-bootstrap';
 import cv from './assets/cv.pdf';
-import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 
 function App() {
@@ -32,14 +31,6 @@ function App() {
     }
   };
 
-  const params = {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  };
 
   return (
     <div className="App">
@@ -165,7 +156,7 @@ function App() {
         <div id="skillsContainer">
           <div id="skills">
             <div className="textCenterContainer">
-              <h1>Languages</h1>
+              <h1>Languages: </h1>
             </div>
 
             <div id="languagesContainer">
@@ -206,7 +197,7 @@ function App() {
               </div>
               <div id="languagesWorked">
                 <h3>Languages that i used in work</h3>
-                <div className="languagesImgContainer">
+                <div className="languagesImgContainer" style={{marginTop: '3%'}}>
                   <div className="tooltip">
                     <img
                       alt="angular"
@@ -263,15 +254,29 @@ function App() {
         {/* Recomendations Container */}
 
         <div id="recomendationContainer">
-          <div id="recomendation">
-            <Swiper {...params}>
-              <div>Slide #1</div>
-              <div>Slide #2</div>
-              <div>Slide #3</div>
-              <div>Slide #4</div>
-              <div>Slide #5</div>
-            </Swiper>
-          </div>
+            <div id="recomendation">
+                <div className="textCenterContainer" style={{background: '#dbe9ee', color:'#4f6d7a'}}>
+                    <h1>Recomendations : </h1>
+                </div>
+                <div id="boxContainer">
+                    <div className="box">
+                        <p> I can assure that he is a person of integrity, serious, responsible, committed and suitable for any activity entrusted to him. In addition, he always showed a willingness to carry out both her tasks and help her colleagues.
+                            For the above, I have no problem recommending his services to anyone who may be interested in his application.</p>
+                
+                    <h4> Pablo Sutter <br/> <span> Manager </span></h4>
+                    </div>
+                    <div className="box">
+                        
+                    <p> It has been a pleasure to be able to share this time with you, not only because you are a great partner but because you have a very high learning capacity, paying attention to everything you did and exceeding expectations. I hope we will work together again soon! </p>
+                    <h4> Miriam Jové <br/> <span> Corporate culture </span></h4>
+                    </div>
+                    <div className="box">
+                        
+                        <p>Miguel Ángel is a person who is 100% dedicated to the work entrusted to him. He is very respectful, knows how to work in a team and has the necessary knowledge to grow even more as a programmer. If, for whatever reason, he does not know the reason for something, he does his best to investigate it and get the job done. I would definitely have him on my team.</p>
+                    <h4> Eduardo Orihuela <br/> <span> Full stack developer </span></h4>
+                    </div>
+                </div>
+             </div>
         </div>
 
         <div className="footer">
@@ -311,7 +316,7 @@ function App() {
           </Row>
         </div>
 
-        <div id="cv">
+        <div id="cv" >
           <a href={cv}>
             CV <i className="fas fa-file-download"></i>{' '}
           </a>
