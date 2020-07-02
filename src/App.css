@@ -711,6 +711,10 @@ body::-webkit-scrollbar-thumb {
     height: 1650px !important !important;
   }
 
+  #boxContainer .box:after {
+    left: 20px;
+  }
+
   #recomendation .textCenterContainer {
     margin-bottom: 5%;
   }
