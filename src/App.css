@@ -669,6 +669,57 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media (max-height: 750px) {
+  .header {
+    height: 110vh;
+  }
+
+  .headerContainer {
+    height: 110vh;
+  }
+
+  #keepScrolling {
+    position: relative;
+    bottom: 90px;
+  }
+
+  #portfolioContainer {
+    height: 150vh;
+  }
+
+  #portfolio {
+    height: 150vh;
+  }
+
+  .tooltip {
+    width: 30%;
+  }
+
+  .tooltip:hover {
+    width: 45%;
+  }
+
+  #recomendationContainer {
+    height: 220vh !important;
+  }
+
+  #recomendation {
+    height: 220vh !important;
+  }
+
+  #boxContainer {
+    height: 1650px !important !important;
+  }
+
+  #recomendation .textCenterContainer {
+    margin-bottom: 5%;
+  }
+
+  .box {
+    margin-top: 5%;
+  }
+}
+
 @media (max-width: 800px) {
   #keepScrolling {
     position: relative;
@@ -759,8 +810,6 @@ body::-webkit-scrollbar-thumb {
     color: #dbe9ee;
     font-size: 14px;
     font-weight: 900;
-    opacity: 100%;
-    animation: none;
   }
 
   .headerContainer {
@@ -854,7 +903,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   50% {
-    opacity: 100%;
+    opacity: 1;
     font-size: 4em;
   }
 
