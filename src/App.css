@@ -209,7 +209,7 @@ section .side#side2 {
 
 #portfolio .cardContainer {
   width: 80%;
-  height: 80%;
+  height: 65%;
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
