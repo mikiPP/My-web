@@ -156,12 +156,12 @@ function App() {
         <div id="skillsContainer">
           <div id="skills">
             <div className="textCenterContainer">
-              <h1>Languages: </h1>
+              <h1>Skills: </h1>
             </div>
 
             <div id="languagesContainer">
               <div id="languagesLearned">
-                <h3>Languages that i learned</h3>
+                <h3>Skills that i learned</h3>
                 <div className="languagesImgContainer">
                   <div className="tooltip">
                     <img
@@ -196,7 +196,7 @@ function App() {
                 </div>
               </div>
               <div id="languagesWorked">
-                <h3>Languages that i used in work</h3>
+                <h3>Skills that i used in work</h3>
                 <div className="languagesImgContainer" style={{marginTop: '3%'}}>
                   <div className="tooltip">
                     <img

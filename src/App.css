@@ -743,15 +743,15 @@ body::-webkit-scrollbar-thumb {
   }
 
   #recomendationContainer {
-    height: 180vh;
+    height: 180vh !important;
   }
 
   #recomendation {
-    height: 180vh;
+    height: 180vh !important;
   }
 
   #boxContainer {
-    height: 1250px !important;
+    height: 1250px !important !important;
   }
 
   #recomendation .textCenterContainer {
@@ -835,11 +835,11 @@ body::-webkit-scrollbar-thumb {
   }
 
   #skillsContainer {
-    height: 220vh;
+    height: 240vh;
   }
 
   #skills {
-    height: 220vh;
+    height: 240vh;
   }
 
   #languagesContainer {
@@ -855,15 +855,15 @@ body::-webkit-scrollbar-thumb {
   }
 
   #recomendationContainer {
-    height: 300vh;
+    height: 300vh !important;
   }
 
   #recomendation {
-    height: 300vh;
+    height: 300vh !important;
   }
 
   #boxContainer {
-    height: 1550px !important;
+    height: 1550px !important !important;
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   }
 
