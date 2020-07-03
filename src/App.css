@@ -368,7 +368,7 @@ section .side#side2 {
 }
 
 .tooltip:hover .tooltipText {
-  opacity: 100%;
+  opacity: 1;
   width: 100px;
 }
 
