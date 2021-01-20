@@ -48,7 +48,7 @@ function App() {
           }, 2000);
         }}
       >
-        <video className="video" src={smoke} autoPlay muted={true}></video>
+        <video className="video" src={smoke} autoPlay muted={true} preload></video>
         <h2> Welcome to my web page</h2>
       </section>
 
